@@ -40,15 +40,11 @@ The sequence told a clear story:
 
 A few details stood out during review. Events 4 through 8 all returned HTTP status code `302`, and the response size was `0`. That matters because it indicates the requests were redirected and did not receive a meaningful response body. In this case, that strongly suggested the attempted payloads were not successfully executed.
 
-![Response codes](../screenshots/06-response-codes.png)
 
-![Response size check](../screenshots/07-response-size.png)
+<img width="598" height="350" alt="SOC-166 5th Event" src="https://github.com/user-attachments/assets/24611b32-fe9c-43b6-9d03-bf1840c3212a" />
 
-![Timeline view](../screenshots/08-timeline-view.png)
+<img width="593" height="338" alt="SOC-166 8th Event Log Management" src="https://github.com/user-attachments/assets/4297af9f-a30e-4a20-8855-74da236d6f6b" />
 
-![Request pattern](../screenshots/09-request-pattern.png)
-
-![Final suspicious request](../screenshots/10-final-suspicious-request.png)
 
 ## Threat Assessment
 
@@ -60,43 +56,36 @@ It is important to separate suspicion from successful infiltration. The traffic 
 
 Before applying the playbook, I re-checked the timeline and supporting evidence to make sure the conclusion was based on observable data rather than assumption. That extra validation is important in SOC work because it can prevent overcalling an incident or missing a real escalation path. The playbook also suggested making sure to understand why the alert was triggered and to collect certain data.
 
-![Playbook view](../screenshots/11-playbook-view.png)
-
-![Evidence collection](../screenshots/12-evidence-collection.png)
 
 ### Step 1: Determine Whether the Traffic Is Malicious
 
 Yes. The source IP had prior malicious reporting, and the request pattern aligned with XSS behavior. The activity was not normal user traffic.
 
-![Malicious traffic check](../screenshots/13-malicious-traffic-check.png)
 
 ### Step 2: Identify the Attack Type
 
 This was assessed as a cross-site scripting attempt, likely reflected XSS. The payload structure and keyword usage in the URL were consistent with that classification.
 
-![Attack type check](../screenshots/14-attack-type-check.png)
 
 ### Step 3: Determine Whether This Was a Planned Test
 
 There was no evidence of a sanctioned security test. No internal notice, change request, or testing coordination was identified in the logs or surrounding context.
 
-![Planned test check](../screenshots/15-planned-test-check.png)
 
 ### Step 4: Identify Traffic Direction
 
 The traffic flowed from external to internal, with the source attempting to interact with the web server through crafted requests.
 
-![Traffic direction](../screenshots/16-traffic-direction.png)
 
 ### Step 5: Determine Whether the Attack Succeeded
 
 Based on the logs, the attack did not appear to succeed. The final requests returned `302` redirects and `0-byte` responses, which suggested the payload did not execute as intended.
 
-![Attack success check](../screenshots/17-attack-success-check.png)
 
 ### Step 6: Collect Artifacts
 
-![Artifact collection](../screenshots/18-artifact-collection.png)
+<img width="761" height="450" alt="SOC-166- Artifacts" src="https://github.com/user-attachments/assets/0fcc7465-d054-499f-b74b-ff765ffc40d5" />
+
 
 ### Step 7: Escalation Decision
 
