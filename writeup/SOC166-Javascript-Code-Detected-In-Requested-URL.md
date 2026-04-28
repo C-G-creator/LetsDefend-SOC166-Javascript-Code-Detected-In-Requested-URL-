@@ -26,13 +26,9 @@ The source IP, `112.85.42[.]13`, had multiple AbuseIPDB reports associated with 
 
 Next, I moved into Log Management and reviewed events for the targeted host on February 26, 2022. I found eight events tied to the alert, including the event that triggered the detection rule.
 
-![Log management overview](../screenshots/02-log-management-overview.png)
 
-![Related events list](../screenshots/03-related-events-list.png)
+<img width="602" height="319" alt="SOC-166 Probing Request" src="https://github.com/user-attachments/assets/cd58988b-01d6-4708-95ed-5ac5cf2e7041" />
 
-![Event detail 1](../screenshots/04-event-detail-1.png)
-
-![Event detail 2](../screenshots/05-event-detail-2.png)
 
 The sequence told a clear story:
 
