@@ -4,6 +4,7 @@ In this post, I’ll walk through my investigation of SOC166 — JavaScript Code
 
 <img width="1115" height="555" alt="SOC166 - Alert Overview" src="https://github.com/user-attachments/assets/67f6b02a-9ac5-43cb-b204-2236b33de61d" />
 
+
 ## Alert Overview
 
 On February 26, 2022, at 6:56 PM, LetsDefend generated an alert for JavaScript code detected in a requested URL. The targeted asset was WebServer1002 with the internal IP address 172.16.17.17.
