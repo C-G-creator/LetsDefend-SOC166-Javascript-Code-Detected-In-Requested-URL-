@@ -1,6 +1,5 @@
 # Security Policy
 
-
 ## Scope
 
 This repository is a SOC case study and documentation project. It is intended for educational and portfolio use only.
