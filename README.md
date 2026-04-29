@@ -30,3 +30,4 @@ Open the write-up first, then review the screenshots in the order they appear in
 ## Notes
 
 This repo is intentionally straightforward and written in a natural style. It is meant to read like an actual analyst project rather than a template dump.
+
